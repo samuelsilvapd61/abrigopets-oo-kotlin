@@ -35,10 +35,10 @@ fun main() {
             5 -> Abrigo.exibirPets(listaAbrigos)
 
             // Apaga o Pet de um Abrigo
-            //6 -> Abrigo.apagarPet(listaAbrigos)
+            6 -> Abrigo.apagarPet(listaAbrigos)
 
             // Brinca com um Pet de um Abrigo
-            //7 -> Abrigo.brincarPet(listaAbrigos)
+            7 -> Abrigo.brincarPet(listaAbrigos)
 
             // Sai do loop e deixa o programa finalizar naturalmente.
             8 -> {

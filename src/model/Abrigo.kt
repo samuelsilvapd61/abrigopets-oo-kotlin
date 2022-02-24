@@ -113,6 +113,48 @@ class Abrigo(
                 println("ID $id inexistente.")
             }
         }
+
+        fun apagarPet(lista: MutableList<Abrigo>) {
+            print("Digite o ID do Abrigo: ")
+            val id: Int = readln().toInt()
+            val abrigo = AuxiliarModel.retornaAbrigo(id, lista)
+
+            if (abrigo != null) {
+                print("Digite o ID do Pet: ")
+                val idPet: Int = readln().toInt()
+
+                val pet: Animal? = AuxiliarModel.retornaPet(idPet, abrigo.listaAnimais)
+                if (pet != null) {
+                    val especie: String = pet.javaClass.simpleName
+                    abrigo.listaAnimais[especie]!!.remove(pet)
+                    println("Pet ID: ${pet.id} - Nome: ${pet.nome} do Abrigo: ${abrigo.nome} apagado com sucesso!")
+                } else {
+                    println("Pet ID $idPet inexistente.")
+                }
+            } else {
+                println("Abrigo ID $id inexistente.")
+            }
+        }
+
+        fun brincarPet(lista: MutableList<Abrigo>) {
+            print("Digite o ID do Abrigo: ")
+            val id: Int = readln().toInt()
+            val abrigo = AuxiliarModel.retornaAbrigo(id, lista)
+
+            if (abrigo != null) {
+                print("Digite o ID do Pet: ")
+                val idPet: Int = readln().toInt()
+
+                val pet: Animal? = AuxiliarModel.retornaPet(idPet, abrigo.listaAnimais)
+                if (pet != null) {
+                   pet.brincar()
+                } else {
+                    println("Pet ID $idPet inexistente.")
+                }
+            } else {
+                println("Abrigo ID $id inexistente.")
+            }
+        }
     }
 
     override fun toString(): String {
