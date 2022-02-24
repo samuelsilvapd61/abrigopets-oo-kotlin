@@ -1,28 +1,32 @@
 package model
 
-abstract class Animal(id: Int=0, nome: String="") {
+abstract class Animal(open var id: Int=0, open var nome: String="") {
     abstract fun brincar()
+
+    override fun toString(): String {
+        return "ID: $id - Nome: $nome"
+    }
 }
 
-class Cachorro(private val id: Int=0, private val nome: String="") : Animal(id, nome) {
+class Cachorro(override var id: Int=0, override var nome: String="") : Animal(id, nome) {
     override fun brincar() {
         println("${this.nome} está latindo e girando!")
     }
 }
 
-class Gato(val id: Int=0, val nome: String="") : Animal(id, nome) {
+class Gato(override var id: Int=0, override var nome: String="") : Animal(id, nome) {
     override fun brincar() {
         println("${this.nome} está miando e pulando!")
     }
 }
 
-class Passaro(val id: Int=0, val nome: String="") : Animal(id, nome) {
+class Passaro(override var id: Int=0, override var nome: String="") : Animal(id, nome) {
     override fun brincar() {
         println("${this.nome} está cantando!")
     }
 }
 
-class Peixe(val id: Int=0, val nome: String="") : Animal(id, nome) {
+class Peixe(override var id: Int=0, override var nome: String="") : Animal(id, nome) {
     override fun brincar() {
         println("${this.nome} está pulando o anel!")
     }

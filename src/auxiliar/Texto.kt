@@ -21,6 +21,7 @@ class Texto {
                 mensagem += ("$opcao | ")
             }
             mensagem = mensagem.substring(0, mensagem.length-3)
+            println(mensagem)
 
             print("Digite a opção desejada: ")
             return readln().toInt()
